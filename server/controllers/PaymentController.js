@@ -15,7 +15,7 @@ class PaymentController {
             })
             let lastId = lastOrder ? lastOrder.id + 1 : 1
             let OrderBidUpdate = await OrderBid.update({
-                orderId: "ORD-SUBS-" + Date.now() + lastId,
+                orderId: "ORD-TELANG-" + Date.now() + lastId,
             })
             let parameter = {
                 "transaction_details": {
