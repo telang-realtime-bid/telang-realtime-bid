@@ -46,9 +46,41 @@ class PaymentController {
 
     static async getMidtransNotification(req, res, next) {
         try {
+            let statusResponse = req.body
+            let orderId = statusResponse.order_id;
+            let transactionStatus = statusResponse.transaction_status;
+            let fraudStatus = statusResponse.fraud_status;
 
+            console.log(`Transaction notification received. Order ID: ${orderId}. Transaction status: ${transactionStatus}. Fraud status: ${fraudStatus}`);
+
+            let order = await OrderBid.findOne({
+                where: {
+                    orderId: orderId
+                }
+            })
+
+            let successPayment = async () => {
+                await order.update({
+                    status: 'paid'
+                })
+            }
+
+            if (transactionStatus == 'capture') {
+                if (fraudStatus == 'accept') {
+                    await successPayment()
+                }
+            } else if (transactionStatus == 'settlement') {
+                await successPayment()
+            } else if (transactionStatus == 'cancel' ||
+                transactionStatus == 'deny' ||
+                transactionStatus == 'expire') {
+                await order.update({
+                    status: 'failure'
+                })
+            }
+            res.status(200).json({ message: 'Payment Success' })
         } catch (error) {
-
+            next(error)
         }
     }
 }
