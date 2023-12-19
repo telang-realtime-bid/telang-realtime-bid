@@ -8,6 +8,18 @@ function errorHandlers(error, req, res, next) {
             statusCode = 400
             message = error.errors[0].message
             break
+        case 'emailRequired':
+            statusCode = 400
+            message = 'Email is required'
+            break
+        case 'passwordRequired':
+            statusCode = 400
+            message = 'Password is required'
+            break
+        case 'invalidUser':
+            statusCode = 401
+            message = "Invalid email/password"
+            break
         case 'invalidToken':
             statusCode = 401
             message = "Invalid token"

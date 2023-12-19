@@ -26,26 +26,21 @@ class UserController {
             const { email, password } = req.body
 
             if (!email) {
-                res.status(400).json({ message: "Email is missing" })
-                return;
+                throw { name: 'emailRequired' }
             }
-
             if (!password) {
-                res.status(400).json({ message: "Password is missing" })
-                return;
+                throw { name: 'passwordRequired' }
             }
         
             const user = await User.findOne({ where: { email } })
            
             if (!user)  {
-                res.status(401).json({ message: "Invalid email/password" })
-                return;
+                throw { name: 'invalidUser' }
             }
             
             const isPasswordValid = comparePassword(password, user.password)
             if (!isPasswordValid) {
-                res.status(401).json({ message: "Invalid email/password" })
-                return;
+                throw { name: 'invalidUser' }
             }
            
             const access_token = signToken({ id: user.id })
