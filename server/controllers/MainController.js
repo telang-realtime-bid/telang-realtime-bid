@@ -1,9 +1,20 @@
+const express = require('express')
+const { User, Product } = require('../models/index')
+
 class MainController {
     static async getAllProducts(req, res, next) {
         try {
-
+            const data = await Product.findAll({
+                include: {
+                    model: User,
+                    attributes: {
+                        exclude: ['password']
+                    }
+                }
+            })
+            res.status(200).json({ message: `Successfully get the data`, data })
         } catch (error) {
-
+            next(error)
         }
     }
 
@@ -14,12 +25,14 @@ class MainController {
 
         }
     }
-
+    
     static async deleteProduct(req, res, next) {
+        const { id } = req.params
         try {
+           
 
         } catch (error) {
-
+           
         }
     }
 
