@@ -20,9 +20,10 @@ class MainController {
 
     static async postProduct(req, res, next) {
         try {
-
+            const data = await Product.create(req.body)
+            res.status(201).json(data)
         } catch (error) {
-
+            next(error)
         }
     }
     
