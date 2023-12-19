@@ -1,3 +1,5 @@
+const { Product, Bid, User } = require('../models');
+
 class MainController {
     static async getAllProducts(req, res, next) {
         try {
@@ -25,9 +27,31 @@ class MainController {
 
     static async getAllBid(req, res, next) {
         try {
+            const productId = req.params.productId;
 
-        } catch (error) {
+            const product = await Product.findByPk(productId);
 
+            if (!product) {
+                throw { name: 'Product not found' }
+              }
+
+            const bids = await Bid.findAll({
+              where: { ProductId: productId },
+              include: [
+                {
+                  model: User,
+                  attributes: { exclude: ['password'] },
+                },
+              ],
+            });
+        
+            if (!bids) {
+              return res.status(404).json({ message: 'Bids not found' });
+            }
+        
+            return res.status(200).json(bids);
+          } catch (error) {
+            next(error);
         }
     }
 
