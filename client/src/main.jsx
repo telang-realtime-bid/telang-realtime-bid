@@ -12,6 +12,7 @@ import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import Layout from './Layout.jsx'
 import HomePage from './pages/HomePage.jsx'
+import OrderPage from './pages/OrderPage.jsx'
 
 let authHome = () => {
   let access_token = localStorage.access_token
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
         element: <HomePage />,
         loader: authHome,
       },
+      {
+        path: "/order",
+        element: <OrderPage/>,
+        loader: authHome
+      }
     ],
   }
 ])
