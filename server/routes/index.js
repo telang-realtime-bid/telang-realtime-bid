@@ -16,7 +16,7 @@ router.post('/register', UserController.register)
 router.post('/login', UserController.login)
 router.post('/payment/midtrans/notification', PaymentController.getMidtransNotification)
 
-router.use(authen)
+ router.use(authen)
 
 router.get('/products', MainController.getAllProducts)  // home (tampilin semua product yang sold false)
 router.post('/products', MainController.postProduct)    // tambah product
@@ -28,7 +28,7 @@ router.post('/bid', MainController.sendBid) // kirim bid
 
 router.get('/users/products', MainController.productsWinBid) // ambil semua product yang dimenangin oleh user
 
-router.post('/payment/midtrans/token', PaymentController.getMidtransToken)
+router.post('/payment/midtrans/token/:orderBidId', PaymentController.getMidtransToken)
 
 router.use(errorHandlers)
 
