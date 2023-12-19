@@ -23,28 +23,26 @@ class UserController {
 
     static async login(req, res, next) {
         try {
-            const { email, password } = req.body
-
+            let { email, password } = req.body
             if (!email) {
                 throw { name: 'emailRequired' }
             }
             if (!password) {
                 throw { name: 'passwordRequired' }
             }
-
-            const user = await User.findOne({ where: { email } })
-
-            if (!user) {
+            let findUser = await User.findOne({
+                where: {
+                    email: email
+                }
+            })
+            if (!findUser) {
                 throw { name: 'invalidUser' }
             }
-
-            const isPasswordValid = comparePassword(password, user.password)
-            if (!isPasswordValid) {
+            let verifyPassword = comparePassword(password, findUser.password)
+            if (!verifyPassword) {
                 throw { name: 'invalidUser' }
             }
-
-            const access_token = signToken({ id: user.id })
-
+            let access_token = signToken(findUser)
             res.status(200).json({ access_token })
         } catch (error) {
             next(error)
