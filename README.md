@@ -121,7 +121,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
@@ -201,7 +201,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
@@ -231,7 +231,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
@@ -275,7 +275,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
@@ -317,7 +317,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
@@ -345,7 +345,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
@@ -378,7 +378,7 @@ Request
 
 ```json
 {
-  "Authorization": "Bearer <string token>"
+    "access_token": "string"
 }
 ```
 
