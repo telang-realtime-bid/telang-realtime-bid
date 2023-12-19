@@ -16,6 +16,10 @@ function errorHandlers(error, req, res, next) {
             statusCode = 400
             message = 'Password is required'
             break
+        case 'inputYourAmount':
+            statusCode = 400
+            message = 'Input your amount!'
+            break;
         case 'invalidUser':
             statusCode = 401
             message = "Invalid email/password"

@@ -1,5 +1,5 @@
 const express = require("express");
-const { User, Product } = require("../models/index");
+const { User, Product, Bid } = require("../models/index");
 
 class MainController {
   static async getAllProducts(req, res, next) {
@@ -55,22 +55,33 @@ class MainController {
 
   static async getAllBid(req, res, next) {
     try {
-    } catch (error) {}
+    } catch (error) { }
   }
 
   static async chooseTheWinnerBid(req, res, next) {
     try {
-    } catch (error) {}
+    } catch (error) { }
   }
 
   static async sendBid(req, res, next) {
     try {
-    } catch (error) {}
+      if (req.body.bidAmount === '') {
+        throw { name: "inputYourAmount" }
+      }
+      let newBid = await Bid.create({
+        UserId: req.user.id,
+        ProductId: req.body.ProductId,
+        bidAmount: req.body.bidAmount,
+      })
+      return res.status(201).json(newBid)
+    } catch (error) {
+      next(error)
+    }
   }
 
   static async productsWinBid(req, res, next) {
     try {
-    } catch (error) {}
+    } catch (error) { }
   }
 }
 
