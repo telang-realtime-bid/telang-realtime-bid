@@ -14,7 +14,7 @@ class UserController {
             res.status(201).json({
                 "id": createdUser.id,
                 "fullname": createdUser.username,
-                "email": createdUser.email,   
+                "email": createdUser.email,
             })
         } catch (error) {
             next(error)
@@ -31,22 +31,22 @@ class UserController {
             if (!password) {
                 throw { name: 'passwordRequired' }
             }
-        
+
             const user = await User.findOne({ where: { email } })
-           
-            if (!user)  {
+
+            if (!user) {
                 throw { name: 'invalidUser' }
             }
-            
+
             const isPasswordValid = comparePassword(password, user.password)
             if (!isPasswordValid) {
                 throw { name: 'invalidUser' }
             }
-           
+
             const access_token = signToken({ id: user.id })
-            
+
             res.status(200).json({ access_token })
-        } catch (error) {            
+        } catch (error) {
             next(error)
         }
     }
