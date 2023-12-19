@@ -1,4 +1,3 @@
-const express = require("express");
 const { User, Product, Bid, OrderBid } = require("../models/index");
 
 class MainController {
@@ -94,7 +93,15 @@ class MainController {
 
   static async productsWinBid(req, res, next) {
     try {
-    } catch (error) { }
+      let data = await OrderBid.findAll({
+        where: {
+          UserId: req.user.id
+        }
+      })
+      res.status(201).json(data);
+    } catch (error) {
+      next(error)
+    }
   }
 }
 
