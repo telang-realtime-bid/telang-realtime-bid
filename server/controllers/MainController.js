@@ -53,9 +53,29 @@ class MainController {
   }
 
   static async getAllBid(req, res, next) {
-    try {
-    } catch (error) { }
-  }
+        try {
+            const productId = req.params.productId;
+
+            const product = await Product.findByPk(productId);
+
+            if (!product) {
+                throw { name: 'Product not found' }
+              }
+
+            const bids = await Bid.findAll({
+              where: { ProductId: productId },
+              include: [
+                {
+                  model: User,
+                  attributes: { exclude: ['password'] },
+                },
+              ],
+            });
+            return res.status(200).json(bids);
+          } catch (error) {
+            next(error);
+        }
+    }
 
   static async chooseTheWinnerBid(req, res, next) {
     try {
