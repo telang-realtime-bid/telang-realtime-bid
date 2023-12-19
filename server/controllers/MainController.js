@@ -1,5 +1,5 @@
 const express = require("express");
-const { User, Product, Bid } = require("../models/index");
+const { User, Product, Bid, OrderBid } = require("../models/index");
 
 class MainController {
   static async getAllProducts(req, res, next) {
@@ -60,7 +60,20 @@ class MainController {
 
   static async chooseTheWinnerBid(req, res, next) {
     try {
-    } catch (error) { }
+      await Product.update({
+        sold : true
+      })
+      let createOrderBid = await OrderBid.create({
+        name,
+        imageUrl,
+        description,
+        amount,
+        UserId,
+      })
+      res.status(201).json(createOrderBid);
+    } catch (error) {
+      next(error)
+    }
   }
 
   static async sendBid(req, res, next) {
