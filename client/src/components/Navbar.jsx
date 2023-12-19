@@ -32,6 +32,7 @@ const Navbar = () => {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
   }, [theme])
+  
   return (
     <>
       <nav id='home'>
@@ -40,7 +41,13 @@ const Navbar = () => {
 
             <NavbarDropdownResponsive />
 
-            <a href="/" className="btn btn-ghost text-3xl px-5 font-serif">Telang</a>
+            <a href="/" className="text-3xl px-9 font-serif">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                style={{ width: '120px' }}
+              />
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex pb-1">
             <ul className="menu font-medium menu-horizontal rounded-xl items-center text-base gap-5">

@@ -7,6 +7,7 @@ export const appSlice = createSlice({
   initialState: {
     isError: false,
     errorMessage: '',
+    dataHome: [],
   },
   reducers: {
     changeIsError: (state, action) => {
@@ -15,12 +16,16 @@ export const appSlice = createSlice({
     changeErrorMessage: (state, action) => {
       state.errorMessage = action.payload
     },
+    changeDataHome: (state, action) => {
+      state.dataHome = action.payload
+    },
   }
 })
 
 export const {
   changeIsError,
   changeErrorMessage,
+  changeDataHome,
 } = appSlice.actions
 
 export const login = (input) => {
@@ -71,5 +76,27 @@ export const register = (input) => {
   }
 }
 
+export const fetchHome = () => {
+  return async (dispatch) => {
+    try {
+      let link = import.meta.env.VITE_BASE_URL + `/products`
+      let { data } = await axios({
+        method: 'get',
+        url: link,
+        headers: {
+          Authorization: 'Bearer ' + localStorage.access_token
+        }
+      })
+      dispatch(changeDataHome(data.data))
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error.response.data.message}`,
+      })
+      throw error
+    }
+  }
+}
 
 export default appSlice.reducer
