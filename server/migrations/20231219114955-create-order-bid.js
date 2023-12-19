@@ -12,6 +12,7 @@ module.exports = {
       orderId: {
         type: Sequelize.STRING,
         allowNull: false,
+        defaultValue: '-'
       },
       name: {
         type: Sequelize.STRING,

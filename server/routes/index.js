@@ -28,7 +28,7 @@ router.post('/bid', MainController.sendBid) // kirim bid
 
 router.get('/users/products', MainController.productsWinBid) // ambil semua product yang dimenangin oleh user
 
-router.post('/payment/midtrans/token', PaymentController.getMidtransToken)
+router.post('/payment/midtrans/token/:orderBidId', PaymentController.getMidtransToken)
 
 router.use(errorHandlers)
 
