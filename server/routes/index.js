@@ -16,7 +16,7 @@ router.post('/register', UserController.register)
 router.post('/login', UserController.login)
 router.post('/payment/midtrans/notification', PaymentController.getMidtransNotification)
 
-// router.use(authen)
+ router.use(authen)
 
 router.get('/products', MainController.getAllProducts)  // home (tampilin semua product yang sold false)
 router.post('/products', MainController.postProduct)    // tambah product
