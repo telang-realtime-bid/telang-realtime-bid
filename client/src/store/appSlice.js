@@ -4,11 +4,24 @@ import Swal from 'sweetalert2'
 
 export const appSlice = createSlice({
   name: 'app',
-  initialState: {},
-  reducers: {}
+  initialState: {
+    isError: false,
+    errorMessage: '',
+  },
+  reducers: {
+    changeIsError: (state, action) => {
+      state.isError = action.payload
+    },
+    changeErrorMessage: (state, action) => {
+      state.errorMessage = action.payload
+    },
+  }
 })
 
-export const {  } = appSlice.actions
+export const {
+  changeIsError,
+  changeErrorMessage,
+} = appSlice.actions
 
 export const login = (input) => {
   return async (dispatch) => {
@@ -30,5 +43,33 @@ export const login = (input) => {
     }
   }
 }
+
+export const register = (input) => {
+  return async (dispatch) => {
+    try {
+      let link = import.meta.env.VITE_BASE_URL + `/register`
+      await axios({
+        method: 'post',
+        url: link,
+        data: input,
+      })
+      Swal.fire({
+        title: "Success!",
+        text: "Your registration is successfully",
+        icon: "success"
+      })
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error.response.data.message}`,
+      })
+      dispatch(changeErrorMessage(error.response.data.message))
+      dispatch(changeIsError(true))
+      throw error
+    }
+  }
+}
+
 
 export default appSlice.reducer

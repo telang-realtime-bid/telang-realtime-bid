@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import imageForm from '../assets/login.jpg'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -8,6 +8,7 @@ const Login = () => {
   let [input, setInput] = useState()
   let navigate = useNavigate()
   let dispatch = useDispatch()
+  let currentTheme = localStorage.getItem('theme')
 
   let changeInput = (e) => {
     let { name, value } = e.target
@@ -22,6 +23,12 @@ const Login = () => {
     await dispatch(login(input))
     navigate('/')
   }
+
+  useEffect(() => {
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme)
+    }
+  }, [currentTheme])
 
   return (
     <>
