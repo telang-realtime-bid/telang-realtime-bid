@@ -34,9 +34,23 @@ class MainController {
   }
 
   static async deleteProduct(req, res, next) {
-    const { id } = req.params;
-    try {
-    } catch (error) {}
+      try {
+        const { productId } = req.params;
+        
+        if (!productId) {
+            return res.status(400).json({ message: 'Invalid product ID' });
+        }
+        
+        const data = await Product.findByPk(productId)
+        
+        if (!data) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+        await data.destroy()
+        res.status(200).json({ message: `Successfully Deleted Product` });
+    } catch (error) {
+        next(error)
+    }
   }
 
   static async getAllBid(req, res, next) {
