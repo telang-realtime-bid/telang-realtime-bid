@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-let JWT_SECRET = 'telang-realtime-bid' // NANTI TARUH KE ENV
+let JWT_SECRET = process.env.JWT_SECRET
 function signToken(dataUser) {
     let { id } = dataUser
     return jwt.sign({ id }, JWT_SECRET)

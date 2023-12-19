@@ -5,7 +5,7 @@ class PaymentController {
         try {
             let snap = new midtransClient.Snap({
                 isProduction: false,
-                serverKey: 'SB-Mid-server-Sr4BTgFXZD2obO4arnlKBetR'
+                serverKey: process.env.MIDTRANS_SERVER_KEY
             })
 
             let find = await OrderBid.findByPk(req.params.orderBidId)
