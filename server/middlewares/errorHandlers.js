@@ -20,6 +20,10 @@ function errorHandlers(error, req, res, next) {
             statusCode = 400
             message = 'Input your amount!'
             break;
+        case 'invalidProductId':
+            statusCode = 400
+            message = 'Invalid product id'
+            break;
         case 'invalidUser':
             statusCode = 401
             message = "Invalid email/password"
@@ -27,6 +31,10 @@ function errorHandlers(error, req, res, next) {
         case 'invalidToken':
             statusCode = 401
             message = "Invalid token"
+            break
+        case 'productNotFound':
+            statusCode = 404
+            message = "Product Not Found"
             break
     }
     res.status(statusCode).json({ message })

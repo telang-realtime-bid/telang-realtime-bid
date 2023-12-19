@@ -37,13 +37,13 @@ class MainController {
             const { productId } = req.params;
 
             if (!productId) {
-                return res.status(400).json({ message: 'Invalid product ID' });
+                throw { name: 'invalidProductId' }
             }
 
             const data = await Product.findByPk(productId)
 
             if (!data) {
-                return res.status(404).json({ message: 'Product not found' });
+                throw { name: 'productNotFound' }
             }
             await data.destroy()
             res.status(200).json({ message: `Successfully Deleted Product` });
@@ -59,7 +59,7 @@ class MainController {
             const product = await Product.findByPk(productId);
 
             if (!product) {
-                throw { name: 'Product not found' }
+                throw { name: 'productNotFound' }
             }
 
             const bids = await Bid.findAll({
