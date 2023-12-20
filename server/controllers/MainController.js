@@ -10,6 +10,10 @@ class MainController {
                         exclude: ["password"],
                     },
                 },
+                where: {
+                    sold: false,
+                },
+                order: [['id', 'ASC']]
             });
             res.status(200).json({ message: `Successfully get the data`, data });
         } catch (error) {
@@ -99,6 +103,7 @@ class MainController {
                         attributes: { exclude: ['password'] },
                     },
                 ],
+                order: [['id', 'ASC']]
             });
             return res.status(200).json(bids);
         } catch (error) {

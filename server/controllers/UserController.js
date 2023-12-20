@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Bid, OrderBid, Product } = require('../models');
 const { comparePassword } = require('../helpers/bcrypt')
 const { signToken } = require('../helpers/jwt')
 
@@ -44,6 +44,34 @@ class UserController {
             }
             let access_token = signToken(findUser)
             res.status(200).json({ access_token })
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async userById(req, res, next) {
+        try {
+            let data = await User.findByPk(req.user.id, {
+                include: [
+                    {
+                        model: Bid,
+                    },
+                    {
+                        model: Product,
+                    },
+                    {
+                        model: OrderBid,
+                    },
+                ],
+                attributes: {
+                    exclude: ['password'],
+                },
+            })
+            if (!data) {
+                throw { name: 'errorNotFound' }
+            }
+
+            res.status(200).json(data)
         } catch (error) {
             next(error)
         }

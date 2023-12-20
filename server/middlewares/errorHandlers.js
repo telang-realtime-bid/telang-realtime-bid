@@ -36,6 +36,10 @@ function errorHandlers(error, req, res, next) {
             statusCode = 404
             message = "Product Not Found"
             break
+        case 'errorNotFound':
+            statusCode = 404
+            message = "Not Found!"
+            break
     }
     res.status(statusCode).json({ message })
 }
