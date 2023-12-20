@@ -25,8 +25,12 @@ const NavbarDropdownResponsive = () => {
                 </div>
                 <ul tabIndex={0} className="menu menu-sm dropdown-content z-[1] p-2 shadow bg-base-300 rounded-box w-52">
                     <li><a href="/" className="p-4 text-lg">Home</a></li>
-                    <li><a href="/" className="p-4 text-lg">Add Auction</a></li>
-                    <li><a href="/" className="p-4 text-lg">Order</a></li>
+                    <li><a className="p-4 text-lg">Auction</a>
+                        <ul className="p-2">
+                            <li><a href='/list/:userId'>List Auction</a></li>
+                            <li><a href='/product'>Add Auction</a></li>
+                        </ul></li>
+                    <li><a href="/order" className="p-4 text-lg">Order</a></li>
                     <button className="sm:hidden items-center text-center btn bg-base-100 rounded-xl" onClick={logoutHandler}>Logout</button>
                 </ul>
             </div>

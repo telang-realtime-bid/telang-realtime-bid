@@ -61,7 +61,7 @@ const Navbar = () => {
                   </ul>
                 </details>
               </li>
-              <li><a className='rounded-lg' href="/">Order</a></li>
+              <li><a className='rounded-lg' href="/order">Order</a></li>
             </ul>
           </div>
 

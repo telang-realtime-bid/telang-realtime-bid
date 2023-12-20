@@ -39,7 +39,7 @@ const AddAuction = () => {
     return (
         <>
             <div className="mb-16 p-6">
-                <div className="mockup-window border bg-base-200 p-10 flex flex-col items-center">
+                <div className="mockup-window border bg-base-300 p-10 flex flex-col items-center">
                     <h2 className="font-bold mb-7 text-2xl text-primary-500">Add Your Auction</h2>
                 </div>
                 <form className="max-w-md mt-10 mx-auto" onSubmit={handleSubmit}>
