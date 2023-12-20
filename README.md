@@ -19,7 +19,9 @@ Telang - Real Time Bid
 - GET /product/:productId
 - GET /products/:productId
 - POST /bid
-- GET /users/products
+- GET /user/products
+- GET /bid/:productId
+- GET /user/me
 
 ## * User Endpoints
 
@@ -323,7 +325,6 @@ Request
 }
 ```
 
-
 Response (200 - OK)
 
 ```json
@@ -415,7 +416,7 @@ Response (400 - Bad Request)
 }
 ```
 
-### 8. GET /users/products
+### 8. GET /user/products
 
 Request
 
@@ -461,6 +462,77 @@ Response (201 - OK)
 }
 
 ```
+
+### 9. GET /bid/:productId
+
+Request
+
+- headers:
+
+```json
+{
+    "access_token": "string"
+}
+```
+
+Response (200 - OK)
+
+```json
+{
+      "id": 1,
+      "bidAmount": 500000,
+      "UserId": 7,
+      "ProductId": 7,
+      "createdAt": "2023-12-19T13:09:30.061Z",
+      "updatedAt": "2023-12-19T13:09:30.061Z",
+}
+```
+
+Response (404 - Not Found)
+
+```json
+{
+    "message": "Product not found"
+}
+```
+
+### 10. GET /user/me
+
+Request
+
+- headers:
+
+```json
+{
+    "access_token": "string"
+}
+```
+
+Response (200 - OK)
+
+```json
+{
+    "id": 1,
+    "bidAmount": 500000,
+    "orderId": "ORD-TELANG-17025839075245",
+    "createdAt": "2023-12-19T12:58:33.528Z",
+    "updatedAt": "2023-12-19T12:58:33.528Z",
+
+}
+```
+
+Response (404 - Not Found)
+
+```json
+{
+    "message": "Product not found"
+}
+OR
+{
+    "message": "Not Found!"
+}
+```
+
 
 ### Global Error
 
