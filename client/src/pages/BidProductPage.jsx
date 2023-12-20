@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ModalPhotoBidProductPage from '../components/ModalPhotoBidProductPage'
+import IndicatorBidBadge from '../components/IndicatorBidBadge'
 
 const BidProductPage = () => {
   let { productId } = useParams()
@@ -70,37 +72,25 @@ const BidProductPage = () => {
               </figure>
 
               {isModalOpen && (
-                <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-75 flex items-center justify-center">
-                  <div className="relative mx-auto max-w-3xl w-[500px]">
-                    <button onClick={closeModal} className="absolute top-4 right-4 text-black text-xl">&times;</button>
-                    <img src={product.imageUrl} alt="Large Product" className="rounded-xl" />
-                  </div>
-                </div>
+                <ModalPhotoBidProductPage product={product} closeModal={closeModal} />
               )}
 
               <div className="card-body bg-base-200">
-                <div className="indicator mb-3">
-                  <div className="indicator-item indicator-botto bg-base-100m">
-                    <span className="indicator-item badge rounded-lg badge-secondary text-purple-300 p-3 bg-base-100">Best Offer!</span>
-                  </div>
-                  <div className="card border">
-                    <div className="card-body">
-                      <h1 className="card-title">Bid : {setCurrency(product.currentBid)}</h1>
-                    </div>
-                  </div>
-                </div>
+                <IndicatorBidBadge  product={product} setCurrency={setCurrency} />
 
                 <div className='chat-box bg-base-secondary border '>
                   <div className='chat-header bg-base-300'>
                     <p className='text-base p-3 font-thin text-center'>{product.name}</p>
                   </div>
                   <div className='p-4  h-[500px]'>
+
                     <div className="chat chat-end">
                       <div className="chat-bubble">isi pesan</div>
                       <div className="chat-footer opacity-50">
                         <span>Delivered </span>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
 
