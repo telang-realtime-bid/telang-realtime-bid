@@ -24,7 +24,6 @@ module.exports = {
       currentBid: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 0
       },
       sold: {
         type: Sequelize.BOOLEAN,

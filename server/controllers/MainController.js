@@ -23,11 +23,12 @@ class MainController {
 
     static async postProduct(req, res, next) {
         try {
-            const { name, description, imageUrl } = req.body;
+            const { name, description, imageUrl, currentBid } = req.body;
             const data = await Product.create({
                 name,
                 description,
                 imageUrl,
+                currentBid,
                 UserId: req.user.id
             });
             res.status(201).json(data);

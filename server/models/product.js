@@ -51,7 +51,11 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
     },
-    currentBid: DataTypes.INTEGER,
+    currentBid: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
     sold: DataTypes.BOOLEAN,
     UserId: DataTypes.INTEGER
   }, {
