@@ -27,17 +27,21 @@ const AddAuction = () => {
         e.preventDefault();
 
         try {
-            await axios.post('http://localhost:3000/products', formData, {
+            await axios.post(import.meta.env.VITE_BASE_URL + '/products', formData, {
                 headers: { Authorization: 'Bearer ' + localStorage.access_token },
             });
             Swal.fire({
                 title: "Success!",
                 icon: "success"
-              })
+            })
             navigate("/");
 
         } catch (error) {
-            console.error(error);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: `${error.response.data.message}`,
+            })
         }
     };
 
