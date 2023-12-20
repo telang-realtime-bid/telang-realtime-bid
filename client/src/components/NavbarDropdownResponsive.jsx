@@ -27,7 +27,7 @@ const NavbarDropdownResponsive = () => {
                     <li><a href="/" className="p-4 text-lg">Home</a></li>
                     <li><a className="p-4 text-lg">Auction</a>
                         <ul className="p-2">
-                            <li><a href='/list/:userId'>List Auction</a></li>
+                            <li><a href='/list'>List Auction</a></li>
                             <li><a href='/product'>Add Auction</a></li>
                         </ul></li>
                     <li><a href="/order" className="p-4 text-lg">Order</a></li>

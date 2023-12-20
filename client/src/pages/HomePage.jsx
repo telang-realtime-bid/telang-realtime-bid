@@ -76,11 +76,11 @@ const HomePage = () => {
           </div>
         </div>
       ) : (
-        <section className='bg-base-100 p-10 min-h-screen'>
+        <section className='bg-base-100 p-10 mt-10 min-h-screen'>
           <div className="container">
             <h1 className="text-center text-xl font-bold font-serif text-base-content">Let's Auction!</h1>
           </div>
-          <div className="mt-10 flex flex-wrap justify-center gap-10">
+          <div className="mt-16 flex flex-wrap justify-center gap-10">
 
             {dataHome && dataHome.map(auction => {
               return <CardHome key={auction.id} auction={auction} />

@@ -31,37 +31,43 @@ const ListAuction = () => {
 
     return (
         <>
-            <div className="overflow-x-auto mt-8 mb-8">
-                <table className="table">
-                    {/* <!-- head --> */}
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th>Current Bid</th>
-                            <th>Time Limit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {userProducts.map((product, index) => (
-                            <tr key={index}>
-                                <th>{index + 1}</th>
-                                <td>{product.name}</td>
-                                <td>{product.description}</td>
-                                <td>
-                                    <img src={product.imageUrl} alt={`Image ${index + 1}`} style={{ width: '50px' }} />
-                                </td>
-                                <td>Rp {product.currentBid}</td>
-                                <td>
-                                    {setDateFormat(product.timeLimit)}
-                                </td>
+            <section className='p-10'>
+                <div className="mockup-window border bg-base-300 p-10 flex flex-col items-center">
+                    <h2 className="font-bold mb-7 text-2xl text-primary-500">Add Your Auction</h2>
+                </div>
+                <div className="overflow-x-auto mt-8 mb-8">
+                    <table className="table bg-base-300">
+                        {/* <!-- head --> */}
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Current Bid</th>
+                                <th>Time Limit</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {userProducts.map((product, index) => (
+                                <tr key={index}>
+                                    <th>{index + 1}</th>
+                                    <td>{product.name}</td>
+                                    <td>{product.description}</td>
+                                    <td>
+                                        <img src={product.imageUrl} alt={`Image ${index + 1}`} style={{ width: '200px' }} />
+                                    </td>
+                                    <td>Rp {product.currentBid}</td>
+                                    <td>
+                                        {setDateFormat(product.timeLimit)}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
         </>
     );
 }
