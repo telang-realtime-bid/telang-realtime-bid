@@ -60,7 +60,7 @@ const BidProductPage = () => {
             </div>
             <div className="card border lg:card-side mt-4 shadow-xl">
               <figure>
-                <div className="card w-[500px] shadow-xl bg-base-300 p-5 relative cursor-pointer">
+                <div className="card w-[400px] shadow-xl bg-base-300 p-5 relative cursor-pointer">
                   <img src={product.imageUrl} alt="picture" className='rounded-3xl h-96' />
                   <button onClick={openModal} className="btn mt-10 text-base bg-base-200 hover:bg-base-100 rounded-xl">See Product</button>
                   <h1 className="text-md text-center text-base-secondary p-7 mt-3 font-thin">{product.name}</h1>
