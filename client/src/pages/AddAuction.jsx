@@ -26,16 +26,26 @@ const AddAuction = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            await axios.post(import.meta.env.VITE_BASE_URL + '/products', formData, {
-                headers: { Authorization: 'Bearer ' + localStorage.access_token },
-            });
-            Swal.fire({
-                title: "Success!",
-                icon: "success"
-            })
-            navigate("/");
+        const formattedTimeLimit = new Date(formData.timeLimit).toISOString();
 
+        try {
+            await axios.post(
+                import.meta.env.VITE_BASE_URL + '/products',
+                {
+                    ...formData,
+                    timeLimit: formattedTimeLimit,
+                },
+                {
+                    headers: { Authorization: 'Bearer ' + localStorage.access_token },
+                }
+            );
+
+            Swal.fire({
+                title: 'Success!',
+                icon: 'success',
+            });
+
+            navigate('/')
         } catch (error) {
             Swal.fire({
                 icon: "error",
