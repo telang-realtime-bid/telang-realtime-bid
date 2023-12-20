@@ -15,7 +15,7 @@ const HomePage = () => {
     <>
       <>
         {/* Carousel */}
-        <div className="carousel w-full object-cover">
+        <div className="carousel w-full object-cover mb-0">
           <div id="slide1" className="carousel-item relative w-full">
             <img src="/banner1.png" className="w-full " />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -62,8 +62,8 @@ const HomePage = () => {
           </div>
         </div>
         {/* Flag */}
-        <div className="navbar bg-neutral text-neutral-content items-center justify-center">
-          <button className="btn btn-ghost text-xl">
+        <div className="navbar bg-orange-500 text-neutral-content items-center justify-center mt-0 mb-0">
+          <button className="btn btn-ghost text-xl text-white">
             FREE BID FOR NOW AND GET THE SPECIAL ITEMS WITH SPECIAL OFFER!
           </button>
         </div>
@@ -127,7 +127,7 @@ const HomePage = () => {
             <div className="card card-side bg-base-100 shadow-xl mt-20 mx-5">
               <figure>
                 <img
-                  src="https://qph.cf2.quoracdn.net/main-qimg-9ba23c0bba299cf882ce8f2f68554907-lq"
+                  src="https://e0.pxfuel.com/wallpapers/647/937/desktop-wallpaper-yeji-itzy-loco.jpg"
                   alt="Photo"
                   className="object-cover w-48 h-48"
                 />
