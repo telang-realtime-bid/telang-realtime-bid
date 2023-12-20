@@ -30,6 +30,7 @@ router.get('/bid/:productId', MainController.getAllBid) // ambil semua bid dari 
 
 router.get('/user/products', MainController.productsWinBid) // ambil semua product yang dimenangin oleh user
 router.get('/user/me', UserController.userById) // ambil semua product yang dimenangin oleh user
+router.get('/product/timelimit/:productId', MainController.getTimeLimitProduct) // ambil semua product yang dimenangin oleh user
 
 router.post('/payment/midtrans/token/:orderBidId', PaymentController.getMidtransToken)
 
