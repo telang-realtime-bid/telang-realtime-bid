@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         loader: authHome,
       },
       {
-        path: "/product/:userId",
+        path: "/list/:userId",
         element: <ListAuction />,
         loader: authHome,
       },
