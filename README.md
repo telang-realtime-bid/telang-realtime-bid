@@ -459,13 +459,11 @@ Response (201 - OK)
   ...,
  ]
 }
-
 ```
 
-### Global Error
+## Global Error
 
 Response (401 - invalidToken)
-
 ```json
 {
   "message": "Invalid token"
