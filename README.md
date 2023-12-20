@@ -17,9 +17,13 @@ Telang - Real Time Bid
 - POST /products
 - DELETE /products/:productId
 - GET /product/:productId
-- GET /products/:productId
+- GET /list/:userId
+- POST /products/:productId
 - POST /bid
-- GET /users/products
+- GET /bid/:productId
+- GET /user/products
+- GET /user/me
+- GET /product/timelimit/:productId
 
 ## * User Endpoints
 
@@ -268,7 +272,7 @@ Response (404 - Not Found)
 }
 ```
 
-### 4. GET /products/:productId
+### 4. GET /product/:productId
 
 Request
 
@@ -311,7 +315,7 @@ Response (404 - Not Found)
 }
 ```
 
-### 5. GET /products/:productId
+### 5. GET /list/:userId
 
 Request
 
@@ -323,6 +327,56 @@ Request
 }
 ```
 
+Response (200 - OK)
+
+```json
+[
+    {
+    "userId" : 1,
+    "id": 1,
+    "name": "iPhone 12 Pro Max",
+    "description": "iPhone 12 Pro Max.Layar Super Retina XDR 6,7 inci yang lebih besar. Ceramic Shield dengan ketahanan jatuh empat kali lebih baik.",
+    "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/18e036402fb6f9a6fd805fbabad24f39/helix/01-APPLE-8DVPHAPP0-APPMGDL3ID-A-PacificBlueRevSS.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 1,
+    "createdAt": "2023-12-19T12:58:32.538Z",
+    "updatedAt": "2023-12-19T12:58:32.538Z",
+    },
+    {
+     "userId" : 1,
+     "id": 3,
+     "name": "AirPods (3rd generation) Lightning Charging Case",
+     "description": "Dilengkapi CPU 8-core yang mampu menangani berbagai tahapan kerja yang kompleks dalam fotografi, pemrograman, pengeditan video, dan lainnya, dengan mudah.",
+     "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/796a057befc678808bbaf7f419f7ccc6/helix/01-APPLE-846EAAPP0-APPMPNY3ID-A-White.jpg",
+     "currentBid": 0,
+     "sold": false,
+     "UserId": 1,
+     "createdAt": "2023-12-19T12:58:34.538Z",
+     "updatedAt": "2023-12-19T12:58:34.538Z",
+    }
+]
+```
+
+Response (404 - Not Found)
+
+```json
+{
+    "message": "Product not found"
+}
+```
+
+### 6. POST /products/:productId
+
+Request
+
+- headers:
+
+```json
+{
+    "access_token": "string"
+}
+```
 
 Response (200 - OK)
 
@@ -354,7 +408,7 @@ Response (404 - Not Found)
 }
 ```
 
-### 6. POST /products/:productId
+### 7. POST /bid
 
 Request
 
@@ -382,7 +436,7 @@ Response (201 - OK)
 }
 ```
 
-### 7. POST /bid
+### 8. POST /bid/:productID
 
 Request
 
@@ -415,7 +469,7 @@ Response (400 - Bad Request)
 }
 ```
 
-### 8. GET /users/products
+### 9. GET /user/products
 
 Request
 
@@ -461,8 +515,78 @@ Response (201 - OK)
 }
 ```
 
-## Global Error
 
+### 10. GET /user/me
+
+Request
+
+- headers:
+
+```json
+{
+    "access_token": "string"
+}
+```
+
+Response (200 - OK)
+
+```json
+{
+    "id": 1,
+    "bidAmount": 500000,
+    "orderId": "ORD-TELANG-17025839075245",
+    "createdAt": "2023-12-19T12:58:33.528Z",
+    "updatedAt": "2023-12-19T12:58:33.528Z",
+
+}
+```
+
+Response (404 - Not Found)
+
+```json
+{
+    "message": "Product not found"
+}
+OR
+{
+    "message": "Not Found!"
+}
+```
+
+### 11. GET /product/timelimit/:productId
+
+Request
+
+- headers:
+
+```json
+{
+    "access_token": "string"
+}
+```
+
+Response (200 - OK)
+
+```json
+{
+    "id": 2,
+    "bidAmount": 500000,
+    "orderId": "ORD-TELANG-17025839075245",
+    "createdAt": "2023-12-19T12:58:33.528Z",
+    "updatedAt": "2023-12-19T12:58:33.528Z",
+
+}
+```
+
+Response (404 - Not Found)
+
+```json
+{
+    "message": "Product not found"
+}
+```
+
+### Global Error
 Response (401 - invalidToken)
 ```json
 {
