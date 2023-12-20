@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CountdownTimer from "../components/CountdownTimer";
 
 const ListAuction = () => {
     const [userProducts, setUserProducts] = useState([]);
@@ -28,6 +27,10 @@ const ListAuction = () => {
         let day = `${date.getDate()}`.padStart(2, '0')
         return `${year}-${month}-${day}`
     }
+
+    function setCurrency(price) {
+        return price.toLocaleString("id-ID", { style: "currency", currency: "IDR" })
+      }
 
     return (
         <>
@@ -57,7 +60,7 @@ const ListAuction = () => {
                                     <td>
                                         <img src={product.imageUrl} alt={`Image ${index + 1}`} style={{ width: '200px' }} />
                                     </td>
-                                    <td>Rp {product.currentBid}</td>
+                                    <td>{setCurrency(product.currentBid)}</td>
                                     <td>
                                         {setDateFormat(product.timeLimit)}
                                     </td>
