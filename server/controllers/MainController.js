@@ -177,11 +177,10 @@ class MainController {
 
   static async listByUserId(req, res, next) {
     try {
-      const userId = req.params.userId;
 
       const products = await Product.findAll({
         where: {
-          UserId: userId,
+          UserId: req.user.id,
         },
         include: {
           model: User,
