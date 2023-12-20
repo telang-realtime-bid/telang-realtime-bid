@@ -1,123 +1,122 @@
 [
-    {
-      "name": "iPhone 12 Pro Max",
-      "description": "iPhone 12 Pro Max.Layar Super Retina XDR 6,7 inci yang lebih besar. Ceramic Shield dengan ketahanan jatuh empat kali lebih baik.",
-      "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/18e036402fb6f9a6fd805fbabad24f39/helix/01-APPLE-8DVPHAPP0-APPMGDL3ID-A-PacificBlueRevSS.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 1
-    },
-    {
-      "name": "MacBook Pro M1 2020 13inch",
-      "description": "Dilengkapi CPU 8-core yang mampu menangani berbagai tahapan kerja yang kompleks dalam fotografi, pemrograman, pengeditan video, dan lainnya, dengan mudah.",
-      "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/46f3b2ddfd2ff4f56a858f4aed015692/helix/01-APPLE-8DVLPAPP0-APPMYDC2ID-A-SilverRevSS.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 2
-    },
-    {
-      "name": "AirPods (3rd generation) Lightning Charging Case",
-      "description": "Dilengkapi CPU 8-core yang mampu menangani berbagai tahapan kerja yang kompleks dalam fotografi, pemrograman, pengeditan video, dan lainnya, dengan mudah.",
-      "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/796a057befc678808bbaf7f419f7ccc6/helix/01-APPLE-846EAAPP0-APPMPNY3ID-A-White.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 1
-    },
-    {
-      "name": "DJI Mini 4 Pro (DJI RC-N2)",
-      "description": "Sensor 1/1.3-inch CMOS, Dilengkapi Advanced Pilot Assistance Systems (APAS) untuk keamanan tambahan.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/d/j/dji_mini_4_pro_dji_rc-n2_.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 3
-    },
-    {
-      "name": "GoPro HERO11 Black Mini",
-      "description": "Video Highlight Otomatis,Kemudahan satu tombol,Stabilisasi HyperSmooth 5.0.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/g/o/gopro_hero11_black_mini_1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 2
-    },
-    {
-      "name": "Garmin Fenix 7X Sapphire Solar",
-      "description": "Jam tangan dengan material premium sesuai dengan gaya hidup Anda, Memiliki fitur yang mendukung aktivitas ourdoor Anda.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/8/1/81000329001.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 3
-    },
-    {
-      "name": "Samsung Galaxy Z Flip5 8/256GB",
-      "description": "Ukuran Layar: 6.7 inci, 1080 x 2640 pixels, FHD+ Dynamic AMOLED 2X, Infinity Flex Display, 120Hz.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/s/a/samsung_galaxy_z_flip5_5g_lavender_1_2.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 1
-    },
-    {
-      "name": "Toshiba 50 E330L Smart 4K TV",
-      "description": "Ukuran layar 50 Inch, resolusi 4K UHD, fitur Regza Engine.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/t/o/toshiba_50_e330l_smart_4k_tv1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 3
-    },
-    {
-      "name": "Samsung Smart TV UA43T6500BK",
-      "description": "Resolusi Full HD, Smart Hub & One Remote Control.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/s/a/samsung_43_ua43t6500bk_1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 4
-    },
-    {
-      "name": "Garmin Approach S70 42 mm",
-      "description": "Smart notification yang kompatibel dengan smartphone.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/g/a/garmin_approach_s70_42_mm_white_1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 4
-    },
-    {
-      "name": "Garmin Approach S70 42 mm",
-      "description": "Smart notification yang kompatibel dengan smartphone.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/g/a/garmin_approach_s70_42_mm_white_1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 4
-    },
-    {
-      "name": "Sony PlayStation 5 Spiderman2 Bundle Disc",
-      "description": "CPU: x86-64-AMD Ryzen,GPU: AMD Radeon™ RDNA 2-based graphics engine.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/s/o/sony_playstation_5_spiderman2_bundle_disc_white_2.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 5
-    },
-    {
-      "name": "Samsung Galaxy Tab S9 FE",
-      "description": "Ukuran layar: 12.4 inci, 1600 x 2560 pixels (WQXGA+).",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/s/a/samsung_galaxy_tab_s9_fe_plus_gray_1_1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 5
-    },
-    {
-      "name": "Asus ROG Phone 6 8/256GB - Black",
-      "description": "Memanfaatkan kekuatan dari Platform Seluler Qualcomm® Snapdragon® 8+ Gen 1 terbaru.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/a/s/asus_rog_phone_6_phantom_black_1.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 5
-    },
-    {
-      "name": "Razer Enki Gaming Chair",
-      "description": "Didesain untuk kenyamanan sepanjang hari, Cocok untuk profesional gamer.",
-      "imageUrl": "https://cdn.eraspace.com/media/catalog/product/r/a/razer_enki_gaming_chair_green3.jpg",
-      "currentBid": 0,
-      "sold": false,
-      "UserId": 2
-    }
-  ]
-  
+  {
+    "name": "iPhone 12 Pro Max",
+    "description": "iPhone 12 Pro Max.Layar Super Retina XDR 6,7 inci yang lebih besar. Ceramic Shield dengan ketahanan jatuh empat kali lebih baik.",
+    "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/18e036402fb6f9a6fd805fbabad24f39/helix/01-APPLE-8DVPHAPP0-APPMGDL3ID-A-PacificBlueRevSS.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 1
+  },
+  {
+    "name": "MacBook Pro M1 2020 13inch",
+    "description": "Dilengkapi CPU 8-core yang mampu menangani berbagai tahapan kerja yang kompleks dalam fotografi, pemrograman, pengeditan video, dan lainnya, dengan mudah.",
+    "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/46f3b2ddfd2ff4f56a858f4aed015692/helix/01-APPLE-8DVLPAPP0-APPMYDC2ID-A-SilverRevSS.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 2
+  },
+  {
+    "name": "AirPods (3rd generation) Lightning Charging Case",
+    "description": "Dilengkapi CPU 8-core yang mampu menangani berbagai tahapan kerja yang kompleks dalam fotografi, pemrograman, pengeditan video, dan lainnya, dengan mudah.",
+    "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/796a057befc678808bbaf7f419f7ccc6/helix/01-APPLE-846EAAPP0-APPMPNY3ID-A-White.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 1
+  },
+  {
+    "name": "DJI Mini 4 Pro (DJI RC-N2)",
+    "description": "Sensor 1/1.3-inch CMOS, Dilengkapi Advanced Pilot Assistance Systems (APAS) untuk keamanan tambahan.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/d/j/dji_mini_4_pro_dji_rc-n2_.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 3
+  },
+  {
+    "name": "GoPro HERO11 Black Mini",
+    "description": "Video Highlight Otomatis,Kemudahan satu tombol,Stabilisasi HyperSmooth 5.0.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/g/o/gopro_hero11_black_mini_1.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 2
+  },
+  {
+    "name": "Garmin Fenix 7X Sapphire Solar",
+    "description": "Jam tangan dengan material premium sesuai dengan gaya hidup Anda, Memiliki fitur yang mendukung aktivitas ourdoor Anda.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/8/1/81000329001.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 3
+  },
+  {
+    "name": "iPhone 14 Pro Max",
+    "description": "Memotret detail menakjubkan dengan kamera Utama 48 MP. Nikmati iPhone dalam cara yang sepenuhnya baru dengan layar yang Selalu Aktif dan Dynamic Island.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/i/p/iphone_14_pro_max_deep_purple_1_6.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 1
+  },
+  {
+    "name": "Toshiba 50 E330L Smart 4K TV",
+    "description": "Ukuran layar 50 Inch, resolusi 4K UHD, fitur Regza Engine.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/t/o/toshiba_50_e330l_smart_4k_tv1.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 3
+  },
+  {
+    "name": "Samsung Smart TV UA43T6500BK",
+    "description": "Resolusi Full HD, Smart Hub & One Remote Control.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/s/a/samsung_43_ua43t6500bk_1.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 4
+  },
+  {
+    "name": "iPhone 15 Pro Max",
+    "description": "Lahir dari titanium dan dilengkapi chip A17 Pro terobosan,tombol Tindakan yang dapat disesuaikan, dan sistem kamera iPhone paling andal yang pernah ada.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/a/p/apple_iphone_15_pro_max_natural_titanium_1_1_5.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 3
+  },
+  {
+    "name": "Garmin Approach S70 42 mm",
+    "description": "Smart notification yang kompatibel dengan smartphone.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/g/a/garmin_approach_s70_42_mm_white_1.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 4
+  },
+  {
+    "name": "Sony PlayStation 5 Spiderman2 Bundle Disc",
+    "description": "CPU: x86-64-AMD Ryzen,GPU: AMD Radeon™ RDNA 2-based graphics engine.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/s/o/sony_playstation_5_spiderman2_bundle_disc_white_2.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 5
+  },
+  {
+    "name": "MacBook Air M2 (2022)",
+    "description": "MacBook Air yang didesain ulang menggabungkan performa andal dengan kekuatan baterai hingga 18 jam ke dalam penutup berbahan aluminium yang luar biasa tipis.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/m/a/macbook_air_m2_midnight_pdp_image_position-1__id_2.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 5
+  },
+  {
+    "name": "AirPods Pro",
+    "description": "AirPods Pro adalah satu-satunya headphone in-ear dengan Peredam Kebisingan Aktif yang terus beradaptasi dengan telinga Anda dan pas dikenakan.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/a/p/apple_airpods_pro_3_1_2.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 5
+  },
+  {
+    "name": "Razer Enki Gaming Chair",
+    "description": "Didesain untuk kenyamanan sepanjang hari, Cocok untuk profesional gamer.",
+    "imageUrl": "https://cdn.eraspace.com/media/catalog/product/r/a/razer_enki_gaming_chair_green3.jpg",
+    "currentBid": 0,
+    "sold": false,
+    "UserId": 2
+  }
+]

@@ -21,10 +21,11 @@ router.post('/payment/midtrans/notification', PaymentController.getMidtransNotif
 router.get('/products', MainController.getAllProducts)  // home (tampilin semua product yang sold false)
 router.post('/products', MainController.postProduct)    // tambah product
 router.delete('/products/:productId', MainController.deleteProduct) // delete product
+router.get('/product/:productId', MainController.getProductById) // ambil semua bid dari suatu product (ambil pesan)
 
-router.get('/products/:productId', MainController.getAllBid) // ambil semua bid dari suatu product (ambil pesan)
 router.post('/products/:productId', MainController.chooseTheWinnerBid) // pilih pemenang lelang
 router.post('/bid', MainController.sendBid) // kirim bid
+router.get('/bid/:productId', MainController.getAllBid) // ambil semua bid dari suatu product (ambil pesan)
 
 router.get('/users/products', MainController.productsWinBid) // ambil semua product yang dimenangin oleh user
 

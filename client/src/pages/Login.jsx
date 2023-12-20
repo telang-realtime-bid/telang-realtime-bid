@@ -50,7 +50,7 @@ const Login = () => {
                   onChange={changeInput}
                 />
               </div>
-              <div className="py-4">
+              <div >
                 <span htmlFor='password' className="mb-2 text-md">Password</span>
                 <input
                   type="password"
@@ -62,7 +62,7 @@ const Login = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-base-300 mt-4 text-bg-body-secondary p-2 rounded-lg mb-6 hover:bg-base-200"
+                className="w-full bg-base-300 mt-10 text-bg-body-secondary p-2 rounded-lg mb-6 hover:bg-base-200"
               >
                 Login
               </button>

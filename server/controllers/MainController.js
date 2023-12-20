@@ -52,6 +52,35 @@ class MainController {
         }
     }
 
+    static async getProductById(req, res, next) {
+        try {
+            const { productId } = req.params;
+
+            if (!productId) {
+                throw { name: 'invalidProductId' }
+            }
+
+            const data = await Product.findOne({
+                where: {
+                    id: productId
+                },
+                include: {
+                    model: User,
+                    attributes: {
+                        exclude: ["password"],
+                    },
+                },
+            })
+
+            if (!data) {
+                throw { name: 'productNotFound' }
+            }
+            res.status(200).json(data);
+        } catch (error) {
+            next(error)
+        }
+    }
+
     static async getAllBid(req, res, next) {
         try {
             const productId = req.params.productId;
