@@ -16,6 +16,7 @@ Telang - Real Time Bid
 - GET /products
 - POST /products
 - DELETE /products/:productId
+- GET /product/:productId
 - GET /products/:productId
 - POST /bid
 - GET /users/products
@@ -282,6 +283,50 @@ Request
 Response (200 - OK)
 
 ```json
+        {
+            "id": 3,
+            "name": "AirPods (3rd generation) Lightning Charging Case",
+            "description": "Dilengkapi CPU 8-core yang mampu menangani berbagai tahapan kerja yang kompleks dalam fotografi, pemrograman, pengeditan video, dan lainnya, dengan mudah.",
+            "imageUrl": "https://bb-scm-prod-pim.oss-ap-southeast-5.aliyuncs.com/products/796a057befc678808bbaf7f419f7ccc6/helix/01-APPLE-846EAAPP0-APPMPNY3ID-A-White.jpg",
+            "currentBid": 0,
+            "sold": false,
+            "UserId": 1,
+            "createdAt": "2023-12-19T12:58:34.538Z",
+            "updatedAt": "2023-12-19T12:58:34.538Z",
+            "User": {
+                "id": 1,
+                "fullname": "user1",
+                "email": "user1@mail.com",
+                "createdAt": "2023-12-19T12:58:32.528Z",
+                "updatedAt": "2023-12-19T12:58:32.528Z"
+            }
+        },
+```
+
+Response (404 - Not Found)
+
+```json
+{
+    "message": "Product not found"
+}
+```
+
+### 5. GET /products/:productId
+
+Request
+
+- headers:
+
+```json
+{
+    "access_token": "string"
+}
+```
+
+
+Response (200 - OK)
+
+```json
 [
     {
         "id": 1,
@@ -309,7 +354,7 @@ Response (404 - Not Found)
 }
 ```
 
-### 5. POST /products/:productId
+### 6. POST /products/:productId
 
 Request
 
@@ -337,7 +382,7 @@ Response (201 - OK)
 }
 ```
 
-### 6. POST /bid
+### 7. POST /bid
 
 Request
 
@@ -370,7 +415,7 @@ Response (400 - Bad Request)
 }
 ```
 
-### 7. GET /users/products
+### 8. GET /users/products
 
 Request
 
