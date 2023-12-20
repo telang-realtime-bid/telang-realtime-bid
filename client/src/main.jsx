@@ -15,7 +15,7 @@ import HomePage from './pages/HomePage.jsx'
 import BidProductPage from './pages/BidProductPage.jsx'
 import ListAuction from './pages/ListAuction.jsx'
 import AddAuction from './pages/addAuction.jsx'
-import CountdownTimer from './components/CountdownTimer.jsx'
+import OrderUserPage from './pages/OrderUserPage.jsx'
 
 let authHome = () => {
   let access_token = localStorage.access_token
@@ -73,8 +73,8 @@ const router = createBrowserRouter([
         loader: authHome,
       },
       {
-        path: "/timer",
-        element: <CountdownTimer />,
+        path: "/order",
+        element: <OrderUserPage />,
         loader: authHome,
       },
     ],

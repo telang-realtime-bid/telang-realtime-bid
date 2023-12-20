@@ -12,6 +12,8 @@ export const appSlice = createSlice({
     loadingHome: true,
     timeLimit: {},
     loadingTimeLimit: true,
+    dataProductsWin: [],
+    loadingProductsWinBid: true,
   },
   reducers: {
     changeIsError: (state, action) => {
@@ -35,6 +37,12 @@ export const appSlice = createSlice({
     changeLoadingTimeLimit: (state, action) => {
       state.loadingTimeLimit = action.payload
     },
+    changeProductsWinBid: (state, action) => {
+      state.dataProductsWin = action.payload
+    },
+    changeLoadingProductsWinBid: (state, action) => {
+      state.loadingProductsWinBid = action.payload
+    },
   }
 })
 
@@ -46,6 +54,8 @@ export const {
   changeLoadingHome,
   changeTimeLimit,
   changeLoadingTimeLimit,
+  changeProductsWinBid,
+  changeLoadingProductsWinBid,
 } = appSlice.actions
 
 export const login = (input) => {
@@ -165,6 +175,32 @@ export const getTimeLimit = (productId) => {
       throw error
     } finally {
       dispatch(changeLoadingTimeLimit(false))
+    }
+  }
+}
+
+export const getProductsWinBid = () => {
+  return async (dispatch) => {
+    try {
+      let link = import.meta.env.VITE_BASE_URL + `/user/products`
+      let { data } = await axios({
+        method: 'get',
+        url: link,
+        headers: {
+          Authorization: 'Bearer ' + localStorage.access_token
+        }
+      })
+      console.log(data)
+      dispatch(changeProductsWinBid(data))
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error.response.data.message}`,
+      })
+      throw error
+    } finally {
+      dispatch(changeLoadingProductsWinBid(false))
     }
   }
 }
