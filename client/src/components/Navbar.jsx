@@ -56,7 +56,7 @@ const Navbar = () => {
                 <details>
                   <summary className='rounded-lg'> Auction</summary>
                   <ul className="p-2">
-                    <li><a href='/list/:userId'>List Auction</a></li>
+                    <li><a href='/list'>List Auction</a></li>
                     <li><a href='/product'>Add Auction</a></li>
                   </ul>
                 </details>

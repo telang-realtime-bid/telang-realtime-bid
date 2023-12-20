@@ -22,7 +22,7 @@ router.get('/products', MainController.getAllProducts)  // home (tampilin semua 
 router.post('/products', MainController.postProduct)    // tambah product
 router.delete('/products/:productId', MainController.deleteProduct) // delete product
 router.get('/product/:productId', MainController.getProductById) // ambil semua bid dari suatu product (ambil pesan)
-router.get('/list/:userId', MainController.listByUserId) // ambil semua list product by user id
+router.get('/list', MainController.listByUserId) // ambil semua list product by user id
 
 router.post('/products/:productId', MainController.chooseTheWinnerBid) // pilih pemenang lelang
 router.post('/bid', MainController.sendBid) // kirim bid
