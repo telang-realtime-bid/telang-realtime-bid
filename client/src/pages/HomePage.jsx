@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import CardHome from "../components/CardHome";
 import { fetchHome } from "../store/appSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Testimony from "../components/Testimony";
 
 const HomePage = () => {
   let dispatch = useDispatch();
@@ -76,147 +77,37 @@ const HomePage = () => {
                 return <CardHome key={auction.id} auction={auction} />;
               })}
           </div>
-          {/* Testimony1 */}
-          <div className="flex justify-center mt-40">
-            <div className="card card-side bg-base-100 shadow-xl mt-20 mx-5">
-              <figure>
-                <img
-                  src="https://i0.wp.com/celebeatonline.com/wp-content/uploads/2022/02/163646839_151261790203234_4588702925784176269_n-1.jpg?w=956&ssl=1"
-                  alt="Photo"
-                  className="object-cover w-48 h-48"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Kim Ji-Soo</h2>
-                <p>
-                  You won't regret bidding at this auction.
-                  <br />
-                  because the items are definitely quality
+          </section>
+          {/* Footering */}
+          <div
+            className="hero min-h-screen mt-40 bg-cover bg-no-repeat object-cover"
+            style={{
+              backgroundImage:
+                "url(https://lloydsauctions.imgix.net/wp-content/uploads/2018/07/online-auctions-gold-coast-australia-768x333.jpg)",
+            }}
+          >
+            <div className="hero-overlay bg-opacity-30"></div>
+            <div className="hero-content text-center text-neutral-content">
+              <div className="h-full w-full mx-auto">
+                <img src="./logo.png" alt="Logo" className="mx-auto" />
+                <h1 className="mb-5 text-4xl font-bold text-orange-400">
+                  No.1 Best Auction Online Store On The World
+                </h1>
+                <p className="mb-5 text-xl text-black font-bold">
+                  An online auction store is a virtual marketplace where buyers
+                  and sellers come together to engage in the buying and selling
+                  of various goods and services through electronic auction
+                  process. Best service very fast and responsive. Easy to
+                  payment.
                 </p>
-                <div className="rating">
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                </div>
-              </div>
-            </div>
-            {/* Testimony2 */}
-            <div className="card card-side bg-base-100 shadow-xl mt-20 mx-5">
-              <figure>
-                <img
-                  src="https://e0.pxfuel.com/wallpapers/647/937/desktop-wallpaper-yeji-itzy-loco.jpg"
-                  alt="Photo"
-                  className="object-cover w-48 h-48"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Hwang Ye Ji</h2>
-                <p>
-                  The Items Are Authentic.
-                  <br />
-                  100% Trusted and recommended.
-                </p>
-                <div className="rating">
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                </div>
-              </div>
-            </div>
-            {/* Testimony2 */}
-            <div className="card card-side bg-base-100 shadow-xl mt-20 mx-5">
-              <figure>
-                <img
-                  src="https://i.pinimg.com/736x/16/4b/4d/164b4d37eef5f88838b4b922ec6f0973.jpg"
-                  alt="Photo"
-                  className="object-cover w-48 h-48"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Kazuha Nakamura</h2>
-                <p>
-                  At This Auction I Got My Favourite Item
-                  <br />
-                  What I Want With The Best Price
-                </p>
-                <div className="rating">
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                </div>
               </div>
             </div>
           </div>
-        </section>
+          <h1 className="mt-20 text-4xl font-bold text-center text-orange-400">
+            TESTIMONY CUSTOMER'S:
+          </h1>
+          <Testimony/>
+        
       </>
     </>
   );
