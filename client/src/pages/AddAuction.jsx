@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const AddAuction = () => {
     const navigate = useNavigate();
@@ -29,6 +30,10 @@ const AddAuction = () => {
             await axios.post('http://localhost:3000/products', formData, {
                 headers: { Authorization: 'Bearer ' + localStorage.access_token },
             });
+            Swal.fire({
+                title: "Success!",
+                icon: "success"
+              })
             navigate("/");
 
         } catch (error) {
