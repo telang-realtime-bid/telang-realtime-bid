@@ -32,7 +32,7 @@ const Navbar = () => {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
   }, [theme])
-  
+
   return (
     <>
       <nav id='home'>
@@ -50,9 +50,17 @@ const Navbar = () => {
             </a>
           </div>
           <div className="navbar-center hidden lg:flex pb-1">
-            <ul className="menu font-medium menu-horizontal rounded-xl items-center text-base gap-5">
+            <ul className="menu font-medium menu-horizontal rounded-xl items-center text-base gap-5 relative z-10">
               <li><a className='rounded-lg' href="/">Home</a></li>
-              <li><a className='rounded-lg' href="/">Add Auction</a></li>
+              <li>
+                <details>
+                  <summary className='rounded-lg'> Auction</summary>
+                  <ul className="p-2">
+                    <li><a href='/list/:userId'>List Auction</a></li>
+                    <li><a href='/product'>Add Auction</a></li>
+                  </ul>
+                </details>
+              </li>
               <li><a className='rounded-lg' href="/">Order</a></li>
             </ul>
           </div>

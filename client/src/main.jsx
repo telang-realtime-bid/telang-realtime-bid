@@ -13,6 +13,8 @@ import Register from './pages/Register.jsx'
 import Layout from './Layout.jsx'
 import HomePage from './pages/HomePage.jsx'
 import BidProductPage from './pages/BidProductPage.jsx'
+import ListAuction from './pages/ListAuction.jsx'
+import AddAuction from './pages/addAuction.jsx'
 
 let authHome = () => {
   let access_token = localStorage.access_token
@@ -57,6 +59,16 @@ const router = createBrowserRouter([
       {
         path: "/bid/:productId",
         element: <BidProductPage />,
+        loader: authHome,
+      },
+      {
+        path: "/product/:userId",
+        element: <ListAuction />,
+        loader: authHome,
+      },
+      {
+        path: "/product",
+        element: <AddAuction />,
         loader: authHome,
       },
     ],
