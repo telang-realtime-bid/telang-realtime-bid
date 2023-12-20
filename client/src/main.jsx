@@ -12,6 +12,7 @@ import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import Layout from './Layout.jsx'
 import HomePage from './pages/HomePage.jsx'
+import Chat from './pages/Chat.jsx'
 
 let authHome = () => {
   let access_token = localStorage.access_token
@@ -51,7 +52,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
-        loader: authHome,
+        // loader: authHome,
+      },
+      {
+        path: "/chat",
+        element: <Chat />,
+        // loader: authHome,
       },
     ],
   }

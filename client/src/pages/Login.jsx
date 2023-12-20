@@ -20,6 +20,7 @@ const Login = () => {
 
   async function submitLogin(e){
     e.preventDefault()
+    localStorage.setItem('email',input.email)
     await dispatch(login(input))
     navigate('/')
   }
