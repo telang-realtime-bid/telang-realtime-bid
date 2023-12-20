@@ -57,6 +57,18 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 0,
     },
     sold: DataTypes.BOOLEAN,
+    timeLimit: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Time limit is required",
+        },
+        notNull: {
+          msg: "Time limit is required",
+        }
+      },
+    },
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
