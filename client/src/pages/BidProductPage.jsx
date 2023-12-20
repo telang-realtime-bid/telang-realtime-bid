@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getWhoLogin } from "../store/appSlice"
 import socket from '../socket'
 import CardSideBidPage from '../components/CardSideBidPage'
+import CountdownTimer from '../components/CountdownTimer'
 
 const BidProductPage = () => {
   let chatBoxRef = useRef(null)
@@ -177,9 +178,11 @@ const BidProductPage = () => {
       ) : (
         <section>
           <div className="m-10">
-            <div className="mockup-window border bg-base-200 p-10">
-              <h2 className="font-bold flex justify-center font-serif mb-7 text-2xl text-primary-500">{product.name}</h2>
+            <div className="mockup-window border bg-base-200 p-10 flex flex-col items-center">
+              <h2 className="font-bold mb-7 text-2xl text-primary-500">{product.name}</h2>
+              <CountdownTimer productId={productId} />
             </div>
+
             <div className="card border lg:card-side mt-4 shadow-xl">
               <figure>
                 <CardSideBidPage openModal={openModal} product={product} setCurrency={setCurrency} />

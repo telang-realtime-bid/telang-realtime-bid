@@ -9,7 +9,9 @@ export const appSlice = createSlice({
     errorMessage: '',
     dataHome: [],
     whoLogin: {},
-    loadingHome: true
+    loadingHome: true,
+    timeLimit: {},
+    loadingTimeLimit: true,
   },
   reducers: {
     changeIsError: (state, action) => {
@@ -27,6 +29,12 @@ export const appSlice = createSlice({
     changeLoadingHome: (state, action) => {
       state.loadingHome = action.payload
     },
+    changeTimeLimit: (state, action) => {
+      state.timeLimit = action.payload
+    },
+    changeLoadingTimeLimit: (state, action) => {
+      state.loadingTimeLimit = action.payload
+    },
   }
 })
 
@@ -36,6 +44,8 @@ export const {
   changeDataHome,
   changeWhoLogin,
   changeLoadingHome,
+  changeTimeLimit,
+  changeLoadingTimeLimit,
 } = appSlice.actions
 
 export const login = (input) => {
@@ -130,6 +140,31 @@ export const getWhoLogin = () => {
         text: `${error.response.data.message}`,
       })
       throw error
+    }
+  }
+}
+
+export const getTimeLimit = (productId) => {
+  return async (dispatch) => {
+    try {
+      let link = import.meta.env.VITE_BASE_URL + `/product/timelimit/${productId}`
+      let { data } = await axios({
+        method: 'get',
+        url: link,
+        headers: {
+          Authorization: 'Bearer ' + localStorage.access_token
+        }
+      })
+      dispatch(changeTimeLimit(data))
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error.response.data.message}`,
+      })
+      throw error
+    } finally {
+      dispatch(changeLoadingTimeLimit(false))
     }
   }
 }
