@@ -1,4 +1,4 @@
-const { User, Product, Bid, OrderBid } = require("../models/index");
+const { User, Product, Bid, OrderBid, sequelize } = require("../models/index");
 
 class MainController {
   static async getAllProducts(req, res, next) {
@@ -115,15 +115,30 @@ class MainController {
 
   static async chooseTheWinnerBid(req, res, next) {
     try {
-      await Product.update({
+      let data = await Product.findByPk(req.params.productId)
+      if (!data) {
+        throw { name: 'productNotFound' }
+      }
+      if (data.sold === true) {
+        throw { name: 'productSold' }
+      }
+      data = await data.update({
         sold: true
       })
+      const findTheWinner = await Bid.findOne({
+        attributes: [
+          'bidAmount',
+          'UserId',
+          'ProductId',
+        ],
+        where: sequelize.literal(`"bidAmount" = (SELECT MAX("bidAmount") FROM "Bids" WHERE "ProductId" = ${req.params.productId}) AND "ProductId" = ${req.params.productId}`),
+      })
       let createOrderBid = await OrderBid.create({
-        name,
-        imageUrl,
-        description,
-        amount,
-        UserId,
+        name: data.name,
+        imageUrl: data.imageUrl,
+        description: data.description,
+        amount: data.currentBid,
+        UserId: findTheWinner.UserId,
       })
       res.status(201).json(createOrderBid);
     } catch (error) {
@@ -154,7 +169,7 @@ class MainController {
           UserId: req.user.id
         }
       })
-      res.status(201).json(data);
+      res.status(200).json(data);
     } catch (error) {
       next(error)
     }

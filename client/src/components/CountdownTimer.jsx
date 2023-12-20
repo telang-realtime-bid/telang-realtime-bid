@@ -2,10 +2,34 @@ import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { getTimeLimit } from '../store/appSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const CountdownTimer = ({ productId, onTimerExpired }) => {
   let dispatch = useDispatch()
+  let navigate = useNavigate()
   let { timeLimit, loadingTimeLimit } = useSelector((state) => state.appReducer)
+
+  async function chooseTheWinner() {
+    try {
+      let link = import.meta.env.VITE_BASE_URL + `/products/${productId}`
+      await axios({
+        method: 'post',
+        url: link,
+        headers: {
+          Authorization: 'Bearer ' + localStorage.access_token
+        }
+      })
+      navigate('/')
+    } catch (error) {
+      console.log(error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `${error.response.data.message}`,
+      })
+    }
+  }
 
   useEffect(() => {
     dispatch(getTimeLimit(productId))
@@ -41,6 +65,7 @@ const CountdownTimer = ({ productId, onTimerExpired }) => {
           title: "Oops...",
           text: `The auction has closed`,
         })
+        chooseTheWinner()
         clearInterval(timerInterval);
       }
     }, 1000);

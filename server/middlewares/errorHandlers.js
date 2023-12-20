@@ -24,6 +24,10 @@ function errorHandlers(error, req, res, next) {
             statusCode = 400
             message = 'Invalid product id'
             break;
+        case 'productSold':
+            statusCode = 403
+            message = "Product is already sold"
+            break
         case 'invalidUser':
             statusCode = 401
             message = "Invalid email/password"
